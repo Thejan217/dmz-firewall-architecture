@@ -1,0 +1,23 @@
+WAN Interface Rules — OPNsense
+================================
+
+No manually defined rules on this interface.
+
+Auto-generated rule (via NAT port forward):
+  Action:      Allow
+  Protocol:    TCP
+  Destination port: 80 (HTTP)
+  Redirects to:     10.10.10.10 (DMZ web server)
+  Purpose:     Exposes only the web service to the public internet;
+               no direct exposure of the DMZ host's real address.
+
+Hardening:
+  - Private network / bogon blocking enabled on this interface only
+    (WAN is the untrusted zone; DMZ and LAN are not bogon-filtered
+    as they are internal trusted segments).
+
+Verified: External Nmap SYN scan (1,000 ports) against the WAN
+interface — only port 80/tcp open, 999 filtered. No other services
+or management interfaces exposed.
+
+Default: All other inbound traffic is denied.
