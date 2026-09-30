@@ -1,0 +1,22 @@
+DMZ (OPT1) Interface Rules — OPNsense
+=======================================
+
+Rule 1: Block DMZ to LAN
+  Action:      Block
+  Source:      DMZ net (10.10.10.0/24)
+  Destination: LAN net (192.168.100.0/24)
+  Purpose:     Prevents a compromised web server from pivoting into
+               the internal management zone.
+  Verified:    Ping test from 10.10.10.10 to 192.168.100.1 —
+               100% packet loss.
+
+Rule 2: Allow DMZ to WAN
+  Action:      Allow
+  Source:      DMZ net (10.10.10.0/24)
+  Destination: any (WAN)
+  Purpose:     Permits outbound-only internet access so the web
+               server can receive OS and security patches.
+  Verified:    Ping test from 10.10.10.10 to 8.8.8.8 —
+               0% packet loss.
+
+Default: All other traffic on this interface is denied.
