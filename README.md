@@ -55,12 +55,12 @@ The design wasn't assumed to work — it was tested:
 | Nginx service active and starts on boot | Pass |
 | DMZ → WAN outbound connectivity (ping to 8.8.8.8) | Pass — 0% packet loss |
 | DMZ → LAN block (ping to LAN gateway) | **Pass** — 100% packet loss, confirming isolation |
-![DMZ to LAN block test](screenshots/dmz-to-lan-block-test.png)
 | External Nmap SYN scan against WAN interface (1,000 ports) | Pass — only port 80 open, 999 filtered |
 
 The last two are the ones that matter most: proving a compromised
 DMZ host can't pivot into the internal network, and confirming no
 unintended services are exposed to the internet.
+![DMZ to LAN block test](dmz-to-lan-block-test.png)
 
 ## Limitations and production gap
 
