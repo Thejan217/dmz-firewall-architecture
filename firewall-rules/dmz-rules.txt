@@ -10,8 +10,6 @@ Rule 1: Block DMZ to LAN
   Verified:    Ping test from 10.10.10.10 to 192.168.100.1 —
                100% packet loss.
 
-![DMZ to LAN block test](screenshots/dmz-to-lan-block-test.png)
-
 Rule 2: Allow DMZ to WAN
   Action:      Allow
   Source:      DMZ net (10.10.10.0/24)
