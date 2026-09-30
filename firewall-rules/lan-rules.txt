@@ -1,0 +1,13 @@
+LAN Interface Rules — OPNsense
+================================
+
+Default allow rules: all outbound traffic from the LAN management
+zone is permitted.
+
+Rationale: The LAN is a trusted zone, reachable only via VMware
+host-only networking from the administrator's own machine. It is
+not reachable from the WAN or the DMZ, so outbound access does not
+represent a meaningful attack surface increase.
+
+Administrative access to the OPNsense web GUI is restricted to
+this zone only — no remote management from WAN or DMZ.
