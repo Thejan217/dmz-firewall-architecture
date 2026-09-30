@@ -60,7 +60,6 @@ The design wasn't assumed to work — it was tested:
 The last two are the ones that matter most: proving a compromised
 DMZ host can't pivot into the internal network, and confirming no
 unintended services are exposed to the internet.
-![DMZ to LAN block test](dmz-to-lan-block-test.png)
 
 ## Limitations and production gap
 
